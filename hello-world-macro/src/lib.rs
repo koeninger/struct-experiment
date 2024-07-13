@@ -5,7 +5,7 @@ use proc_macro2::{Ident, Span};
 use std::collections::HashSet;
 
 const OK_FIELDS: &[(&'static str, &'static str)] = &[
-    ("checksum", "u32"),
+    ("checksum", "Checksum"),
     ("global_seq_num", "u64"),
     ("tstamp", "u64"),
 ];

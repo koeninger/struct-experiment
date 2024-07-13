@@ -1,6 +1,8 @@
 #[macro_use]
 extern crate hello_world_macro;
 
+type Checksum = u32;
+
 ok_struct!(Buy, checksum, global_seq_num, tstamp);
 ok_struct!(Ping, checksum);
 ok_struct!(Wtf, tstamp, checksum);
