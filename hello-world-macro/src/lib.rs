@@ -17,8 +17,9 @@ pub fn ok_struct(input: TokenStream) -> TokenStream {
     let name = idents.next().expect("ok_struct expects at least one ident for the struct name");
     let wanted: HashSet<_> = idents.map(|x| x.to_string()).collect();
     let fields: Vec<_> = OK_FIELDS.iter().enumerate().map(|(i, (f, t))| {
-        let f = if wanted.contains(&f.to_string()) {
-            f.to_string()
+        let f = f.to_string();
+        let f = if wanted.contains(&f) {
+            f
         } else {
             format!("padding_{i}")
         };
